@@ -1,11 +1,13 @@
 class Solution {
-    public static int answer = 0;
     public int solution(int a, int b, int n) {
+        int exchanged = (n/a)*b;
+        int remain = (n%a) + exchanged;
         if(n < a) {
-            return answer;
-        } else {
-            answer += b*(n/a);
-            return solution(a, b, b * (n/a) + n%a);
-        }
+            return 0;
+        } 
+            return exchanged + solution(a, b, remain);
+        
     }
 }
+
+
