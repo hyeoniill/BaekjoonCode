@@ -3,7 +3,6 @@ import java.util.*;
 class Solution {
     public int solution(int[][] routes) {
         int camera = 1;
-        //끝 지점을 기준으로 정렬
         Arrays.sort(routes, (a, b) -> a[1] - b[1]);
         
         int position = routes[0][1];
@@ -18,4 +17,5 @@ class Solution {
         return camera;
     }
 }
+
 
