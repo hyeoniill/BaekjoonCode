@@ -1,0 +1,46 @@
+import java.util.*;
+class Solution {
+    public String solution(int[] numbers, String hand) {
+        int[][] arr = {{3,1},
+                       {0,0},{0,1},{0,2},
+                       {1,0},{1,1},{1,2},
+                       {2,0},{2,1},{2,2},
+                       {3,0},{3,2}};
+        
+        int currentLeft = 10;
+        int currentRight = 11;
+        
+        StringBuilder sb = new StringBuilder();
+        
+        for(int number: numbers) {
+            if(number == 1 || number == 4 || number == 7) {
+                sb.append("L");
+                currentLeft = number;
+            } else if(number == 3 || number == 6 || number == 9) {
+                sb.append("R");
+                currentRight = number;
+            } else {
+                int leftDistance = Math.abs(arr[currentLeft][0]-arr[number][0])+Math.abs(arr[currentLeft][1]-arr[number][1]);
+                int rightDistance = Math.abs(arr[currentRight][0]-arr[number][0])+Math.abs(arr[currentRight][1]-arr[number][1]);
+                if(leftDistance == rightDistance) {
+                    if(hand.equals("right")) {
+                        currentRight = number;
+                        sb.append("R");
+                    } else {
+                         currentLeft = number;
+                        sb.append("L");
+                    }
+                } else if(leftDistance < rightDistance) {
+                    sb.append("L");
+                    currentLeft = number;
+                } else {
+                    sb.append("R");
+                    currentRight = number;
+                }
+            }
+        }
+        
+        
+        return sb.toString();
+    }
+}
