@@ -1,6 +1,5 @@
 class Solution {
     boolean solution(String s) {
-
-        return s.chars().filter(c -> c=='P' | c=='p').count() == s.chars().filter(c -> c=='Y'| c=='y').count();
+        return s.toLowerCase().chars().map(c->c=='p'?1:c=='y'?-1:0).sum()==0;
     }
 }
