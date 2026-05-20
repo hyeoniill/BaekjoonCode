@@ -1,10 +1,10 @@
 # [level 2] 소수 찾기 - 42839 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42839?gad_source=1&gad_campaignid=23037984604&gbraid=0AAAAAC_c4nDo2H-XW5QSaH-7JBVorDE7R&gclid=Cj0KCQjwlLDQBhDjARIsAPlIefEbadeCQhBeui2Pb4tL4VszpCU8I0mCLhof7gVtr4gQO4XiLT-02b8aAqOCEALw_wcB) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42839?language=java&gad_source=1&gad_campaignid=23037984604&gbraid=0AAAAAC_c4nDo2H-XW5QSaH-7JBVorDE7R&gclid=Cj0KCQjwlLDQBhDjARIsAPlIefE-f71--UcOmoJjUAOxXiEw6FfysBOnG04BR58jKjWlavS3dv7sB3waAt4CEALw_wcB) 
 
 ### 성능 요약
 
-메모리: 65.6 MB, 시간: 19.93 ms
+메모리: 65.9 MB, 시간: 13.89 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 05월 20일 09:32:19
+2026년 05월 20일 12:48:16
 
 ### 문제 설명
 
