@@ -1,44 +1,38 @@
 import java.util.*;
 class Solution {
-    List<List<Integer>> tree = new ArrayList<>();
+    List<List<Integer>> graph = new ArrayList<>();
     int answer = 0;
-    
     public int solution(int[] info, int[][] edges) {
         for(int i=0; i<info.length; i++) {
-            tree.add(new ArrayList<>());
+            graph.add(new ArrayList<>());
         }
-        //트리니까 단방향
         for(int[] edge : edges) {
-            tree.get(edge[0]).add(edge[1]);
+            graph.get(edge[0]).add(edge[1]);
         }
         
-        List<Integer> nxtNodes = new ArrayList<>();
-        nxtNodes.add(0);
+        List<Integer> candidates = new ArrayList<>();
+        candidates.add(0);
         
-        dfs(info, 0, 0, nxtNodes);
+        dfs(info, 0, 0, candidates);
         
         return answer;
     }
     
-    void dfs(int[] info, int sheep, int wolf, List<Integer> candidates) {
+    void dfs(int[] info, int curSheep, int curWolf, List<Integer> candidates) {
         for(int i=0; i<candidates.size(); i++) {
             int curr = candidates.get(i);
-            
-            int nxtSheep = sheep;
-            int nxtWolf = wolf;
-            
+            int nxtSheep = curSheep;
+            int nxtWolf = curWolf;
             if(info[curr]==0) nxtSheep++;
             else nxtWolf++;
-            
-            if(nxtWolf >= nxtSheep) continue;
-            
+
+            if(nxtWolf>=nxtSheep) continue;
             answer = Math.max(answer, nxtSheep);
             
             List<Integer> nxtCandidates = new ArrayList<>(candidates);
             nxtCandidates.remove(i);
-            nxtCandidates.addAll(tree.get(curr));
-            
+            nxtCandidates.addAll(graph.get(curr));
             dfs(info, nxtSheep, nxtWolf, nxtCandidates);
-        }    
+        }
     }
 }
